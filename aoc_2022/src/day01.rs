@@ -39,5 +39,5 @@ fn main(){
     let elves_cals: Vec<Vec<usize>> = read_in_cals();
 
     println!("Puzzle 1: {}", puzzle_one(&elves_cals));
-    println!("Puzzle 1: {}", puzzle_two(&elves_cals));
+    println!("Puzzle 2: {}", puzzle_two(&elves_cals));
 }
