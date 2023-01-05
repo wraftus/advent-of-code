@@ -6,8 +6,8 @@ type IDs = (usize, usize);
 
 fn read_in_ids() -> Vec<(IDs, IDs)> {
     let file_contents: String =
-    fs::read_to_string("input/day04.txt")
-    .expect("Failed to read input file!");
+        fs::read_to_string("input/day04.txt")
+        .expect("Failed to read input file!");
 
     let re = Regex::new(r"^(\d+)-(\d+),(\d+)-(\d+)").unwrap();
     file_contents.as_str()
