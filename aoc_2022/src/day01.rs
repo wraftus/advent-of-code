@@ -1,7 +1,7 @@
 use std::fs;
 
 // read in the calories for each elf
-fn read_in_cals() -> Vec<Vec<usize>>{
+fn read_in_cals() -> Vec<Vec<usize>> {
     // extract the contents of the file as a string
     let file_contents: String = 
         fs::read_to_string("input/day01.txt")
@@ -9,12 +9,17 @@ fn read_in_cals() -> Vec<Vec<usize>>{
 
     // seperate the string into vecs of calories for each elf
     file_contents.as_str()
-        .split("\n\n").map(
-            |elve_cals: &str| elve_cals.split("\n").map(
-                |cal: &str| cal.parse::<usize>().expect("Failed to parse a calorie!")
-            ).collect::<Vec<usize>>()
-        ).collect::<Vec<Vec<usize>>>()
-}
+        .lines()
+        .fold(vec![Vec::new()], |mut acc, line| {
+            if line.is_empty() {
+                acc.push(Vec::new());
+            } else {
+                let cal = line.parse::<usize>().expect("Failed to parse a calorie!");
+                acc.last_mut().unwrap().push(cal);
+            }
+            return acc;
+        })
+    }
 
 fn puzzle_one(elves_cals: &Vec<Vec<usize>>) -> usize {
     // compute the elf with the max total calories

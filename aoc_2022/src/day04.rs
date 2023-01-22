@@ -1,6 +1,5 @@
 use std::fs;
 use regex::Regex;
-use std::cmp;
 
 type IDs = (usize, usize);
 
@@ -11,7 +10,7 @@ fn read_in_ids() -> Vec<(IDs, IDs)> {
 
     let re = Regex::new(r"^(\d+)-(\d+),(\d+)-(\d+)").unwrap();
     file_contents.as_str()
-        .split("\n")
+        .lines()
         .map(|line| {
             let captures = re.captures(line).expect(format!("Failed to regex line {}", line).as_str());
             assert!(captures.len() == 5, "Line {} has {} captures!", line, captures.len());

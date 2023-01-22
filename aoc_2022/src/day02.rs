@@ -85,7 +85,7 @@ fn read_in_strats() -> (Vec<RPSMove>, Vec<RPSStrat>) {
         .expect("Failed to read input file!");
 
     file_contents.as_str()
-        .split("\n")
+        .lines()
         .map(parse_line)
         .unzip()
 }

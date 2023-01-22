@@ -76,7 +76,7 @@ fn parse_input() -> (Vec<Vec<char>>, Vec<StackInstr>) {
         fs::read_to_string("input/day05.txt")
         .expect("Failed to read input file!");
 
-    let mut file_lines = file_contents.as_str().split("\n");
+    let mut file_lines = file_contents.as_str().lines();
     let stack_lines = file_lines.by_ref()
         .take_while(|line| !line.is_empty())
         .collect::<Vec<&str>>();

@@ -26,7 +26,7 @@ fn read_in_rucksacks() -> Vec<Vec<char>> {
         .expect("Failed to read input file!");
 
     file_contents.as_str()
-        .split("\n")
+        .lines()
         .map(|line| line.chars().collect::<Vec<char>>())
         .collect()
 }
