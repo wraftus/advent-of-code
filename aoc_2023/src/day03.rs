@@ -18,7 +18,6 @@ fn read_input() -> (Vec<Vec<Number>>, Vec<Symbol>) {
         fs::read_to_string("input/day03.txt")
         .expect("Failed to read input file!");
 
-
     let number_re = Regex::new(r"(\d+)").unwrap();
     let mut numbers: Vec<Vec<Number>> = Vec::new();
     let mut symbols: Vec<Symbol> = Vec::new();

@@ -30,8 +30,8 @@ fn parse_numbers(numbers_str: &str) -> HashSet<usize> {
 
 fn read_input() -> Vec<ScratchCard> {
     let file_contents =
-    fs::read_to_string("input/day04.txt")
-    .expect("Failed to read input file!");
+        fs::read_to_string("input/day04.txt")
+        .expect("Failed to read input file!");
 
     let line_re = Regex::new(r"Card\s+\d+:(.+)\|(.+)").unwrap();
     file_contents.lines().map(|line_str: &str| {
