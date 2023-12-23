@@ -1,5 +1,5 @@
 use std::fs;
-use std::cmp::{min, max, Ordering};
+use std::cmp::Ordering;
 
 const NUM_CARDS: usize = 14;
 const JACK_NUM: usize  = 11;
